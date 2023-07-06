@@ -1,0 +1,19 @@
+{
+  "extends": ["@rocketseat/eslint-config/react"],
+  "plugins": ["prettier"],
+  "rules": {
+    "array-callback-return": "off",
+    "no-useless-constructor": "off",
+    "no-unused-vars": "off",
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": false,
+        "arrowParens": "always",
+        "semi": true,
+        "endOfLine": "auto",
+        "trailingComma": "none"
+      }
+    ]
+  }
+}
