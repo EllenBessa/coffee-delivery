@@ -9,7 +9,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body{
-    background: ${(props) => props.theme["background"]};
+    background: ${(props) => props.theme.background};
     color: ${(props) => props.theme["base-text"]};
     -webkit-font-smoothing: antialiased;
   }
@@ -17,6 +17,6 @@ export const GlobalStyle = createGlobalStyle`
   body, input, textarea, button{
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
-    font-size: 1rem;
+    font-size: 1rem;  
   }
 `;
