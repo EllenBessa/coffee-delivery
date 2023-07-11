@@ -1,12 +1,12 @@
 import { ShoppingCart } from "@phosphor-icons/react";
 
-import { HeaderButtonCart } from "./styles";
+import { HeaderCartButton } from "./styles";
 
-export function ButtonCart() {
+export function CartButton() {
   return (
-    <HeaderButtonCart>
+    <HeaderCartButton>
       <ShoppingCart size={22} weight="fill" />
       <span>1</span>
-    </HeaderButtonCart>
+    </HeaderCartButton>
   );
 }

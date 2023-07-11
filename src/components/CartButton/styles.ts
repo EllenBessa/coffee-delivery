@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 
-export const BaseButtonCart = styled.button`
+export const BaseCartButton = styled.button`
   padding: 0.5rem;
   border-radius: 0.375rem;
 
@@ -11,13 +11,13 @@ export const BaseButtonCart = styled.button`
   align-items: center;
 `;
 
-export const HeaderButtonCart = styled(BaseButtonCart)`
+export const HeaderCartButton = styled(BaseCartButton)`
   background: ${(props) => props.theme["yellow-light"]};
   color: ${(props) => props.theme["yellow-dark"]};
   position: relative;
 
   span {
-    color: ${(props) => props.theme["white"]};
+    color: ${(props) => props.theme.white};
     font-size: 0.75rem;
     font-weight: 700;
     background: ${(props) => props.theme["yellow-dark"]};
