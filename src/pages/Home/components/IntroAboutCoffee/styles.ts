@@ -56,11 +56,11 @@ export const Topics = styled.div`
   }
 `;
 
-interface IconBackgroundColorProps {
-  iconBackground: "yellow-dark" | "base-text" | "purple" | "yellow";
+interface IconBackgroundProps {
+  background: "yellow-dark" | "base-text" | "purple" | "yellow";
 }
 
-export const IconBackground = styled.strong<IconBackgroundColorProps>`
+export const IconBackground = styled.strong<IconBackgroundProps>`
   padding: 0.5rem;
 
   display: flex;
@@ -68,6 +68,6 @@ export const IconBackground = styled.strong<IconBackgroundColorProps>`
   align-items: center;
 
   border-radius: 50%;
-  background: ${(props) => props.theme[props.iconBackground]};
+  background: ${(props) => props.theme[props.background]};
   color: ${(props) => props.theme.white};
 `;
