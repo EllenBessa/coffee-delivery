@@ -1,7 +1,14 @@
 import { useState } from "react";
 
+import { Minus, Plus, ShoppingCartSimple } from "@phosphor-icons/react";
+
 import expresso from "../../../../assets/expresso.png";
-import { CoffeeCardWrapper } from "./styles";
+import {
+  CoffeeCardWrapper,
+  FormCoffeeCard,
+  FooterCoffeeCard,
+  CoffeeCardTagWrapper
+} from "./styles";
 
 export function CoffeeCard() {
   const [quantity, setQuantity] = useState(1);
@@ -25,26 +32,35 @@ export function CoffeeCard() {
   return (
     <CoffeeCardWrapper>
       <img src={expresso} alt="" />
-      <span>Tradicional</span>
+      <CoffeeCardTagWrapper>
+        <span>Tradicional</span>
+        <span>Tradicional</span>
+        <span>Tradicional</span>
+      </CoffeeCardTagWrapper>
+
       <h3>Expresso Tradicional</h3>
       <p>O tradicional café feito com água quente e grãos moídos</p>
-      <div>
-        <strong>
-          <span>R$</span>
-          9,90
-        </strong>
-        <form action="">
+
+      <FooterCoffeeCard>
+        <span>
+          R$
+          <strong> 9,90</strong>
+        </span>
+        <FormCoffeeCard action="">
           <button type="button" onClick={handleDecreaseQuantity}>
-            -
-          </button>
-          <input type="number" value={quantity} readOnly />
-          <button type="button" onClick={handleIncreaseQuantity}>
-            +
+            <Minus size={14} weight="bold" />
           </button>
 
-          <button>Carrinho</button>
-        </form>
-      </div>
+          <label htmlFor="">{quantity}</label>
+
+          <button type="button" onClick={handleIncreaseQuantity}>
+            <Plus size={14} weight="bold" />
+          </button>
+        </FormCoffeeCard>
+        <button>
+          <ShoppingCartSimple weight="fill" />
+        </button>
+      </FooterCoffeeCard>
     </CoffeeCardWrapper>
   );
 }
