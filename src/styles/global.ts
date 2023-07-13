@@ -20,6 +20,11 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 1rem;  
   }
 
+  ul {
+  padding: 0;
+  list-style: none;
+}
+
   img {
   max-width: 100%;
   height: auto;

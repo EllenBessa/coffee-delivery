@@ -52,12 +52,12 @@ export function IntroAboutCoffee() {
 
         <Topics>
           {topics.map((topic) => (
-            <div key={topic.text}>
+            <li key={topic.text}>
               <IconBackground background={topic.iconBackground}>
                 {topic.icon}
               </IconBackground>
               <span>{topic.text}</span>
-            </div>
+            </li>
           ))}
         </Topics>
       </div>

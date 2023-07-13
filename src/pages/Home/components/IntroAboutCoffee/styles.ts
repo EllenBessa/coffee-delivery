@@ -5,11 +5,21 @@ export const IntroWrapper = styled.div`
   margin-bottom: 5.75rem;
 
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr auto;
   gap: 3.5rem;
 
-  img {
-    margin-left: 10.625rem;
+  @media (max-width: 1000px) {
+    margin-top: 3.5rem;
+    text-align: center;
+    gap: 0;
+
+    img {
+      display: none;
+    }
+  }
+
+  @media (max-width: 481px) {
+    text-align: left;
   }
 `;
 
@@ -36,14 +46,14 @@ export const TitleWrapper = styled.div`
   }
 `;
 
-export const Topics = styled.div`
+export const Topics = styled.ul`
   margin-top: 4.125rem;
 
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1.25rem;
 
-  div {
+  li {
     display: flex;
     align-items: center;
     gap: 0.75rem;
@@ -53,6 +63,17 @@ export const Topics = styled.div`
       font-family: "Roboto", sans-serif;
       color: ${(props) => props.theme["base-text"]};
     }
+  }
+
+  @media (max-width: 1000px) {
+    justify-items: center;
+  }
+
+  @media (max-width: 481px) {
+    margin-top: 3rem;
+
+    grid-template-columns: 1fr;
+    justify-items: start;
   }
 `;
 
