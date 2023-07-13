@@ -73,27 +73,6 @@ export const FooterCoffeeCard = styled.footer`
       font-family: "Baloo 2", cursive;
     }
   }
-
-  button {
-    padding: 0.5rem;
-
-    border: 0;
-    border-radius: 0.375rem;
-    background: ${(props) => props.theme["purple-dark"]};
-    color: ${(props) => props.theme.white};
-
-    cursor: pointer;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    transition: 0.3s;
-  }
-
-  button:hover {
-    background: ${(props) => props.theme.purple};
-  }
 `;
 
 export const FormCoffeeCard = styled.form`

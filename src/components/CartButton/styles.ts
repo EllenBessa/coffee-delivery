@@ -11,10 +11,28 @@ export const BaseCartButton = styled.button`
   align-items: center;
 `;
 
-export const HeaderCartButton = styled(BaseCartButton)`
-  background: ${(props) => props.theme["yellow-light"]};
-  color: ${(props) => props.theme["yellow-dark"]};
+interface CartButtonWrapperProps {
+  variant: "header" | "card";
+}
+
+export const CartButtonWrapper = styled(BaseCartButton)<CartButtonWrapperProps>`
   position: relative;
+
+  background: ${(props) =>
+    props.variant === "header"
+      ? props.theme["yellow-light"]
+      : props.theme["purple-dark"]};
+
+  color: ${(props) =>
+    props.variant === "header"
+      ? props.theme["yellow-dark"]
+      : props.theme.white};
+
+  transition: 0.2s;
+
+  &:hover {
+    background: ${(props) => props.variant === "card" && props.theme.purple};
+  }
 
   span {
     color: ${(props) => props.theme.white};
@@ -26,7 +44,7 @@ export const HeaderCartButton = styled(BaseCartButton)`
     height: 1.25rem;
     width: 1.25rem;
     position: absolute;
-    top: -12px;
+    top: -8px;
     right: -8px;
 
     display: flex;

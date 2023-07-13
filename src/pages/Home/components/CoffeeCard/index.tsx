@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { Minus, Plus, ShoppingCartSimple } from "@phosphor-icons/react";
+import { Minus, Plus } from "@phosphor-icons/react";
 
 import expresso from "../../../../assets/expresso.png";
 import {
@@ -9,6 +9,7 @@ import {
   FooterCoffeeCard,
   CoffeeCardTagWrapper
 } from "./styles";
+import { CartButton } from "../../../../components/CartButton";
 
 export function CoffeeCard() {
   const [quantity, setQuantity] = useState(1);
@@ -57,9 +58,8 @@ export function CoffeeCard() {
             <Plus size={14} weight="bold" />
           </button>
         </FormCoffeeCard>
-        <button>
-          <ShoppingCartSimple weight="fill" />
-        </button>
+
+        <CartButton variant="card" />
       </FooterCoffeeCard>
     </CoffeeCardWrapper>
   );
