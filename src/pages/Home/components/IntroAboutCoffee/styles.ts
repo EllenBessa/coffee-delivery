@@ -9,7 +9,7 @@ export const IntroWrapper = styled.div`
   gap: 3.5rem;
 
   img {
-    margin-left: 180px;
+    margin-left: 10.625rem;
   }
 `;
 
