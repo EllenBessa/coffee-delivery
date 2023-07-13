@@ -19,4 +19,11 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: 400;
     font-size: 1rem;  
   }
+
+  img {
+  max-width: 100%;
+  height: auto;
+
+  display: block;
+}
 `;
