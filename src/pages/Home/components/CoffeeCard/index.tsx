@@ -48,18 +48,26 @@ export function CoffeeCard() {
           <strong> 9,90</strong>
         </span>
         <FormCoffeeCard action="">
-          <button type="button" onClick={handleDecreaseQuantity}>
+          <button
+            type="button"
+            onClick={handleDecreaseQuantity}
+            aria-label="Diminuir quantidade"
+          >
             <Minus size={14} weight="bold" />
           </button>
 
           <label htmlFor="">{quantity}</label>
 
-          <button type="button" onClick={handleIncreaseQuantity}>
+          <button
+            type="button"
+            onClick={handleIncreaseQuantity}
+            aria-label="Aumentar quantidade"
+          >
             <Plus size={14} weight="bold" />
           </button>
         </FormCoffeeCard>
 
-        <CartButton variant="card" />
+        <CartButton variant="card" aria-label="Adicionar ao carrinho" />
       </FooterCoffeeCard>
     </CoffeeCardWrapper>
   );
