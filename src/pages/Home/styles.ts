@@ -14,8 +14,7 @@ export const CardListsWrapper = styled.div`
   margin-bottom: 9.81rem;
 
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  align-items: center;
-  justify-content: space-between;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  place-items: center;
   gap: 2.5rem;
 `;
