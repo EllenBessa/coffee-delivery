@@ -7,7 +7,7 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
   }
-
+  
   body{
     background: ${(props) => props.theme.background};
     color: ${(props) => props.theme["base-text"]};
@@ -19,16 +19,22 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: 400;
     font-size: 1rem;  
   }
-
+  
   ul {
-  padding: 0;
-  list-style: none;
-}
-
+    padding: 0;
+    list-style: none;
+  }
+  
   img {
-  max-width: 100%;
-  height: auto;
+    max-width: 100%;
+    height: auto;
+    
+    display: block;
+  }
 
-  display: block;
-}
+  @media (max-width: 768px) {
+  html {
+    font-size: 87.5%;
+  }
+  }
 `;
