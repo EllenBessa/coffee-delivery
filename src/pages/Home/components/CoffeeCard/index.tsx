@@ -2,7 +2,6 @@ import { useState } from "react";
 
 import { Minus, Plus } from "@phosphor-icons/react";
 
-import expresso from "../../../../assets/expresso.png";
 import {
   CoffeeCardWrapper,
   FormCoffeeCard,
@@ -11,8 +10,20 @@ import {
 } from "./styles";
 import { CartButton } from "../../../../components/CartButton";
 
-export function CoffeeCard() {
+interface CoffeesCardsProps {
+  coffee: {
+    name: string;
+    tags: string[];
+    description: string;
+    price: number;
+    imageUrl: string;
+  };
+}
+
+export function CoffeeCard({ coffee }: CoffeesCardsProps) {
   const [quantity, setQuantity] = useState(1);
+
+  const { name, tags, description, price, imageUrl } = coffee;
 
   function handleDecreaseQuantity() {
     if (quantity <= 1) {
@@ -32,20 +43,21 @@ export function CoffeeCard() {
 
   return (
     <CoffeeCardWrapper>
-      <img src={expresso} alt="" />
+      <img src={imageUrl} alt="" />
+
       <CoffeeCardTagWrapper>
-        <span>Tradicional</span>
-        <span>Tradicional</span>
-        <span>Tradicional</span>
+        {tags.map((tag) => {
+          return <span key={tag}>{tag}</span>;
+        })}
       </CoffeeCardTagWrapper>
 
-      <h3>Expresso Tradicional</h3>
-      <p>O tradicional café feito com água quente e grãos moídos</p>
+      <h3>{name}</h3>
+      <p>{description}</p>
 
       <FooterCoffeeCard>
         <span>
           R$
-          <strong> 9,90</strong>
+          <strong>{price}</strong>
         </span>
         <FormCoffeeCard action="">
           <button

@@ -3,7 +3,21 @@ import { IntroAboutCoffee } from "./components/IntroAboutCoffee";
 
 import { CardListsWrapper, CoffeesSection } from "./styles";
 
+import coffeesMocks from "../../mocks/coffees.json";
+import { useState } from "react";
+
+interface Coffee {
+  id: string;
+  name: string;
+  tags: string[];
+  description: string;
+  price: number;
+  imageUrl: string;
+}
+
 export function Home() {
+  const [coffees] = useState<Coffee[]>(coffeesMocks);
+
   return (
     <>
       <IntroAboutCoffee />
@@ -11,9 +25,9 @@ export function Home() {
       <CoffeesSection>
         <h2>Nossos Cafés</h2>
         <CardListsWrapper>
-          {Array.from(Array(12)).map((_, index) => (
-            <CoffeeCard key={index} />
-          ))}
+          {coffees.map((coffee) => {
+            return <CoffeeCard key={coffee.id} coffee={coffee} />;
+          })}
         </CardListsWrapper>
       </CoffeesSection>
     </>
