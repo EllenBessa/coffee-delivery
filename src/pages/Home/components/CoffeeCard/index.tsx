@@ -10,7 +10,7 @@ import {
 interface CoffeesCardsProps {
   coffee: {
     name: string;
-    tags: string[];
+    categories: string[];
     description: string;
     price: number;
     imageUrl: string;
@@ -18,7 +18,7 @@ interface CoffeesCardsProps {
 }
 
 export function CoffeeCard({ coffee }: CoffeesCardsProps) {
-  const { name, tags, description, price, imageUrl } = coffee;
+  const { name, categories, description, price, imageUrl } = coffee;
 
   const formatCoffeeValue = (price: number) => {
     return new Intl.NumberFormat("pt-BR", {
@@ -31,8 +31,8 @@ export function CoffeeCard({ coffee }: CoffeesCardsProps) {
       <img src={imageUrl} alt="" />
 
       <CoffeeCardTagWrapper>
-        {tags.map((tag) => {
-          return <span key={tag}>{tag}</span>;
+        {categories.map((category) => {
+          return <span key={category}>{category}</span>;
         })}
       </CoffeeCardTagWrapper>
 

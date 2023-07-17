@@ -2,7 +2,7 @@
   {
     "id": "18121d9a-8bb1-45eb-8fd2-0b7859808f15",
     "name": "Expresso Tradicional",
-    "tags": ["Tradicional"],
+    "categories": ["Tradicional"],
     "description": "O tradicional café feito com água quente e grãos moídos",
     "price": 5.5,
     "imageUrl": "https://i.imgur.com/QmUlt5d.png"
@@ -10,7 +10,7 @@
   {
     "id": "542c277e-abf8-4461-894d-270f8f405933",
     "name": "Expresso Americano",
-    "tags": ["Tradicional"],
+    "categories": ["Tradicional"],
     "description": "Expresso diluído, menos intenso que o tradicional",
     "price": 6.2,
     "imageUrl": "https://i.imgur.com/MdD5MTH.png"
@@ -18,7 +18,7 @@
   {
     "id": "13bc5507-2823-4966-bc5b-49ec0af4462e",
     "name": "Expresso Cremoso",
-    "tags": ["Tradicional"],
+    "categories": ["Tradicional"],
     "description": "Café expresso tradicional com espuma cremosa",
     "price": 6.7,
     "imageUrl": "https://i.imgur.com/FOz6x8J.png"
@@ -26,7 +26,7 @@
   {
     "id": "7cdf3595-0457-48f5-b22e-8a13b6ccc00a",
     "name": "Expresso Gelado",
-    "tags": ["Tradicional", "gelado"],
+    "categories": ["Tradicional", "gelado"],
     "description": "Bebida preparada com café expresso e cubos de gelo",
     "price": 7.2,
     "imageUrl": "https://i.imgur.com/S9P1f6f.png"
@@ -34,7 +34,7 @@
   {
     "id": "1d11d564-8eb7-4aa5-a45c-f0bcb15178a1",
     "name": "Café com Leite",
-    "tags": ["Tradicional", "com leite"],
+    "categories": ["Tradicional", "com leite"],
     "description": "Meio a meio de expresso tradicional com leite vaporizado",
     "price": 6.9,
     "imageUrl": "https://i.imgur.com/0lePBfm.png"
@@ -42,7 +42,7 @@
   {
     "id": "423f5661-118e-488d-9a89-f3c989735d15",
     "name": "Latte",
-    "tags": ["Tradicional", "com leite"],
+    "categories": ["Tradicional", "com leite"],
     "description": "Uma dose de café expresso com o dobro de leite e espuma cremosa",
     "price": 7.9,
     "imageUrl": "https://i.imgur.com/py57dkr.png"
@@ -50,7 +50,7 @@
   {
     "id": "e7fe395a-77ef-4704-9fba-d7cf282f887b",
     "name": "Capuccino",
-    "tags": ["Tradicional", "com leite"],
+    "categories": ["Tradicional", "com leite"],
     "description": "Bebida com canela feita de doses iguais de café, leite e espuma",
     "price": 8.9,
     "imageUrl": "https://i.imgur.com/vYtu3GK.png"
@@ -58,7 +58,7 @@
   {
     "id": "a3ea13d6-420e-450a-8baf-b735a51115da",
     "name": "Macchiato",
-    "tags": ["Tradicional", "com leite"],
+    "categories": ["Tradicional", "com leite"],
     "description": "Café expresso misturado com um pouco de leite quente e espuma",
     "price": 7.9,
     "imageUrl": "https://i.imgur.com/nlnsCu8.png"
@@ -66,7 +66,7 @@
   {
     "id": "b0fd7d7d-4dcc-40d1-b19d-879020ab8811",
     "name": "Mocaccino",
-    "tags": ["Tradicional", "com leite"],
+    "categories": ["Tradicional", "com leite"],
     "description": "Café expresso com calda de chocolate, pouco leite e espuma",
     "price": 8.9,
     "imageUrl": "https://i.imgur.com/9Wsb6y4.png"
@@ -74,7 +74,7 @@
   {
     "id": "487c6a1f-b4e9-4516-8329-6073c04d311b",
     "name": "Chocolate Quente",
-    "tags": ["especial", "com leite"],
+    "categories": ["especial", "com leite"],
     "description": "Bebida feita com chocolate dissolvido no leite quente e café",
     "price": 7.9,
     "imageUrl": "https://i.imgur.com/cN2yx1w.png"
@@ -82,7 +82,7 @@
   {
     "id": "699f475b-9a6f-4927-a6b0-067c47ba0577",
     "name": "Cubano",
-    "tags": ["especial", "alcoólico", "com leite"],
+    "categories": ["especial", "alcoólico", "com leite"],
     "description": "Drink gelado de café expresso com rum, creme de leite e hortelã",
     "price": 9.9,
     "imageUrl": "https://i.imgur.com/1z4Olw7.png"
@@ -90,7 +90,7 @@
   {
     "id": "b1e83d97-e9d4-4401-ad02-4477078a2b8f",
     "name": "Havaiano",
-    "tags": ["especial"],
+    "categories": ["especial"],
     "description": "Bebida adocicada preparada com café e leite de coco",
     "price": 9.9,
     "imageUrl": "https://i.imgur.com/w5DYpDC.png"
@@ -98,7 +98,7 @@
   {
     "id": "b991e3ad-404e-45fc-8bd1-14788e0ad1ee",
     "name": "Árabe",
-    "tags": ["especial"],
+    "categories": ["especial"],
     "description": "Bebida preparada com grãos de café árabe e especiarias",
     "price": 9.9,
     "imageUrl": "https://i.imgur.com/QEUJqy0.png"
@@ -106,7 +106,7 @@
   {
     "id": "b85debe5-ad52-459a-94f6-14786b1affbf",
     "name": "Irlandês",
-    "tags": ["especial", "alcoólico"],
+    "categories": ["especial", "alcoólico"],
     "description": "Bebida a base de café, uísque irlandês, açúcar e chantilly",
     "price": 9.9,
     "imageUrl": "https://i.imgur.com/5TxBIvF.png"

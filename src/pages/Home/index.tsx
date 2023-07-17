@@ -9,7 +9,7 @@ import { useState } from "react";
 interface Coffee {
   id: string;
   name: string;
-  tags: string[];
+  categories: string[];
   description: string;
   price: number;
   imageUrl: string;
