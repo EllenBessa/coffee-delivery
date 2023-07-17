@@ -20,6 +20,12 @@ interface CoffeesCardsProps {
 export function CoffeeCard({ coffee }: CoffeesCardsProps) {
   const { name, tags, description, price, imageUrl } = coffee;
 
+  const formatCoffeeValue = (price: number) => {
+    return new Intl.NumberFormat("pt-BR", {
+      currency: "BRL"
+    }).format(price);
+  };
+
   return (
     <CoffeeCardWrapper>
       <img src={imageUrl} alt="" />
@@ -36,7 +42,7 @@ export function CoffeeCard({ coffee }: CoffeesCardsProps) {
       <FooterCoffeeCard>
         <span>
           R$
-          <strong>{price}</strong>
+          <strong>{formatCoffeeValue(price)}</strong>
         </span>
 
         <InputNumber />
