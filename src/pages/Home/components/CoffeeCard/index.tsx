@@ -1,14 +1,11 @@
-import { useState } from "react";
-
-import { Minus, Plus } from "@phosphor-icons/react";
+import { CartButton } from "../../../../components/CartButton";
+import { InputNumber } from "../../../../components/InputNumber";
 
 import {
   CoffeeCardWrapper,
-  FormCoffeeCard,
   FooterCoffeeCard,
   CoffeeCardTagWrapper
 } from "./styles";
-import { CartButton } from "../../../../components/CartButton";
 
 interface CoffeesCardsProps {
   coffee: {
@@ -21,25 +18,7 @@ interface CoffeesCardsProps {
 }
 
 export function CoffeeCard({ coffee }: CoffeesCardsProps) {
-  const [quantity, setQuantity] = useState(1);
-
   const { name, tags, description, price, imageUrl } = coffee;
-
-  function handleDecreaseQuantity() {
-    if (quantity <= 1) {
-      return;
-    }
-
-    setQuantity((state) => state - 1);
-  }
-
-  function handleIncreaseQuantity() {
-    if (quantity >= 99) {
-      return;
-    }
-
-    setQuantity((state) => state + 1);
-  }
 
   return (
     <CoffeeCardWrapper>
@@ -59,25 +38,8 @@ export function CoffeeCard({ coffee }: CoffeesCardsProps) {
           R$
           <strong>{price}</strong>
         </span>
-        <FormCoffeeCard action="">
-          <button
-            type="button"
-            onClick={handleDecreaseQuantity}
-            aria-label="Diminuir quantidade"
-          >
-            <Minus size={14} weight="bold" />
-          </button>
 
-          <label htmlFor="">{quantity}</label>
-
-          <button
-            type="button"
-            onClick={handleIncreaseQuantity}
-            aria-label="Aumentar quantidade"
-          >
-            <Plus size={14} weight="bold" />
-          </button>
-        </FormCoffeeCard>
+        <InputNumber />
 
         <CartButton variant="card" aria-label="Adicionar ao carrinho" />
       </FooterCoffeeCard>
