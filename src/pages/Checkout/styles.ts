@@ -2,7 +2,7 @@ import { styled } from "styled-components";
 
 export const CheckoutWrapper = styled.main`
   display: grid;
-  grid-template-columns: 2fr 1.4fr;
+  grid-template-columns: 2fr 1.2fr;
   gap: 2rem;
 `;
 

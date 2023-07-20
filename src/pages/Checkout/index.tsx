@@ -1,7 +1,6 @@
 import { CurrencyDollar, MapPinLine } from "@phosphor-icons/react";
 
 import { PaymentMethodButton } from "./components/PaymentMethodButton";
-import cafe from "../../assets/expresso.png";
 
 import {
   AddressForm,
@@ -11,7 +10,9 @@ import {
   FinalizationOfPaymentWrapper,
   PaymentMethodWrapper
 } from "./styles";
-import { InputNumber } from "../../components/InputNumber";
+
+import { AddressFormInput } from "./components/AddressFormInput";
+import { CoffeePaymentFinalizationCard } from "./components/CoffeePaymentFinalizationCard";
 
 export function Checkout() {
   return (
@@ -28,15 +29,7 @@ export function Checkout() {
             </div>
           </div>
 
-          <form action="">
-            <input type="text" />
-            <input type="text" />
-            <input type="text" />
-            <input type="text" />
-            <input type="text" />
-            <input type="text" />
-            <input type="text" />
-          </form>
+          <AddressFormInput />
         </AddressForm>
 
         <PaymentMethodWrapper>
@@ -60,14 +53,8 @@ export function Checkout() {
       <FinalizationOfPaymentWrapper>
         <h2>Cafés selecionados</h2>
         <FinalizationOfPayment>
-          <div>
-            <img src={cafe} alt="" />
-            <div>
-              <span>Expresso Tradicional</span>
-              <InputNumber />
-              <button>remover</button>
-            </div>
-          </div>
+          <CoffeePaymentFinalizationCard />
+          <CoffeePaymentFinalizationCard />
 
           <ul>
             <li>
@@ -83,7 +70,6 @@ export function Checkout() {
               <strong>R$ 29,70</strong>
             </li>
           </ul>
-
           <button>confirmar pedido</button>
         </FinalizationOfPayment>
       </FinalizationOfPaymentWrapper>
