@@ -2,6 +2,8 @@ import { ReactElement } from "react";
 
 import { Bank, CreditCard, Money } from "@phosphor-icons/react";
 
+import { PaymentMethodButtonStyling } from "./styles";
+
 type PaymentMethod = "credit" | "debit" | "money";
 
 interface ButtonProps {
@@ -35,9 +37,9 @@ export function PaymentMethodButton({
   paymentMethod
 }: PaymentMethodsButtonProps) {
   return (
-    <button type="button">
+    <PaymentMethodButtonStyling type="button">
       {buttonVariant[paymentMethod].icon}
       {buttonVariant[paymentMethod].text}
-    </button>
+    </PaymentMethodButtonStyling>
   );
 }
