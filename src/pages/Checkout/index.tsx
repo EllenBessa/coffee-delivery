@@ -6,6 +6,7 @@ import {
   AddressForm,
   CheckoutFormWrapper,
   CheckoutWrapper,
+  ConfirmOrderButton,
   FinalizationOfPayment,
   FinalizationOfPaymentWrapper,
   PaymentMethodWrapper
@@ -62,15 +63,18 @@ export function Checkout() {
               <span>R$ 29,70</span>
             </li>
             <li>
-              Total de itens
-              <span>R$ 29,70</span>
+              Entrega
+              <span>R$ 3,50</span>
             </li>
             <li>
-              <strong>Total de itens</strong>
-              <strong>R$ 29,70</strong>
+              <strong>Total</strong>
+              <strong>R$ 33,20</strong>
             </li>
           </ul>
-          <button>confirmar pedido</button>
+
+          <ConfirmOrderButton type="button">
+            confirmar pedido
+          </ConfirmOrderButton>
         </FinalizationOfPayment>
       </FinalizationOfPaymentWrapper>
     </CheckoutWrapper>

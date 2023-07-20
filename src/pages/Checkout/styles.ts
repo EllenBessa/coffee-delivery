@@ -113,6 +113,8 @@ export const FinalizationOfPayment = styled.div`
   border-radius: 6px 44px;
 
   ul {
+    margin-top: 1.6rem;
+
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
@@ -126,5 +128,28 @@ export const FinalizationOfPayment = styled.div`
         font-size: 1.25rem;
       }
     }
+  }
+`;
+
+export const ConfirmOrderButton = styled.button`
+  width: 100%;
+  padding: 0.75rem 0.5rem;
+  margin-top: 1.5rem;
+
+  border: 0;
+  border-radius: 6px;
+  background: ${(props) => props.theme.yellow};
+  color: ${(props) => props.theme.white};
+  font-family: "Roboto", sans-serif;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 700;
+  text-transform: uppercase;
+
+  cursor: pointer;
+  transition: 0.2s;
+
+  &:hover {
+    background: ${(props) => props.theme["yellow-dark"]};
   }
 `;
