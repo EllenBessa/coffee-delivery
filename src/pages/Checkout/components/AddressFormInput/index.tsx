@@ -3,13 +3,13 @@ import { AddressFormWrapper } from "./styles";
 export function AddressFormInput() {
   return (
     <AddressFormWrapper action="">
-      <input type="number" placeholder="CEP" className="cep" />
+      <input type="number" placeholder="CEP" />
 
-      <input type="text" placeholder="Rua" className="street" />
+      <input type="text" placeholder="Rua" />
 
       <input type="number" placeholder="Número" />
 
-      <input type="text" placeholder="Complemento" className="complement" />
+      <input type="text" placeholder="Complemento" />
 
       <input type="text" placeholder="Bairro" />
 

@@ -7,15 +7,15 @@ export const AddressFormWrapper = styled.form`
   grid-template-columns: 12.5rem 1fr 3.75rem;
   gap: 1rem;
 
-  .cep {
+  :nth-child(1) {
     grid-column: span 1;
   }
 
-  .street {
+  :nth-child(2) {
     grid-column: span 3;
   }
 
-  .complement {
+  :nth-child(4) {
     grid-column: span 2;
   }
 
