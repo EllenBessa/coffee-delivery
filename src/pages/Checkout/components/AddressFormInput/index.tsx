@@ -1,24 +1,26 @@
+import { Input } from "../../../../components/Input";
+
 import { AddressFormWrapper } from "./styles";
 
 export function AddressFormInput() {
   return (
     <AddressFormWrapper action="">
-      <input type="number" placeholder="CEP" />
+      <Input type="number" placeholder="CEP" />
 
-      <input type="text" placeholder="Rua" />
+      <Input type="text" placeholder="Rua" />
 
-      <input type="number" placeholder="Número" />
+      <Input type="number" placeholder="Número" />
 
       <div>
-        <input type="text" placeholder="Complemento" />
+        <Input type="text" placeholder="Complemento" />
         <span>Opcional</span>
       </div>
 
-      <input type="text" placeholder="Bairro" />
+      <Input type="text" placeholder="Bairro" />
 
-      <input type="text" placeholder="Cidade" />
+      <Input type="text" placeholder="Cidade" />
 
-      <input type="text" placeholder="UF" maxLength={2} />
+      <Input type="text" placeholder="UF" maxLength={2} />
     </AddressFormWrapper>
   );
 }
