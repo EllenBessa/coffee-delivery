@@ -1,8 +1,9 @@
 import { Trash } from "@phosphor-icons/react";
 
-import cafe from "../../../../assets/expresso.png";
+import { InputNumber } from "@components/InputNumber";
 
-import { InputNumber } from "../../../../components/InputNumber";
+import cafe from "@assets/expresso.png";
+
 import { FinalizationCard, RemoveButton } from "./styles";
 
 export function CoffeePaymentFinalizationCard() {
@@ -14,6 +15,7 @@ export function CoffeePaymentFinalizationCard() {
 
         <div>
           <InputNumber />
+
           <RemoveButton>
             <Trash size={16} />
             Remover

@@ -4,7 +4,7 @@ import { MapPin } from "@phosphor-icons/react";
 
 import { CartButton } from "../CartButton";
 
-import logo from "../../assets/logo.png";
+import logo from "@assets/logo.png";
 import { HeaderContainer } from "./styles";
 
 export function Header() {

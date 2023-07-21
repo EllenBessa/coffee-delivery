@@ -1,5 +1,5 @@
-import { CartButton } from "../../../../components/CartButton";
-import { InputNumber } from "../../../../components/InputNumber";
+import { CartButton } from "@components/CartButton";
+import { InputNumber } from "@components/InputNumber";
 
 import {
   CoffeeCardWrapper,
