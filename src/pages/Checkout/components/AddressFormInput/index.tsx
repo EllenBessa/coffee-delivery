@@ -9,7 +9,10 @@ export function AddressFormInput() {
 
       <input type="number" placeholder="Número" />
 
-      <input type="text" placeholder="Complemento" />
+      <div>
+        <input type="text" placeholder="Complemento" />
+        <span>Opcional</span>
+      </div>
 
       <input type="text" placeholder="Bairro" />
 
