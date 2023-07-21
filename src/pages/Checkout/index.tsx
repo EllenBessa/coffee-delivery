@@ -1,7 +1,8 @@
 import { CurrencyDollar, MapPinLine } from "@phosphor-icons/react";
 
+import { AddressFormInput } from "./components/AddressFormInput";
+import { CoffeePaymentFinalizationCard } from "./components/CoffeePaymentFinalizationCard";
 import { PaymentMethodButton } from "./components/PaymentMethodButton";
-
 import {
   AddressForm,
   CheckoutFormWrapper,
@@ -11,9 +12,6 @@ import {
   FinalizationOfPaymentWrapper,
   PaymentMethodWrapper
 } from "./styles";
-
-import { AddressFormInput } from "./components/AddressFormInput";
-import { CoffeePaymentFinalizationCard } from "./components/CoffeePaymentFinalizationCard";
 
 export function Checkout() {
   return (

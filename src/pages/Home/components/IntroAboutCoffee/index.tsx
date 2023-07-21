@@ -1,8 +1,8 @@
 import { ReactElement } from "react";
 
+import introCoffee from "@assets/introCoffee.png";
 import { Coffee, Package, ShoppingCart, Timer } from "@phosphor-icons/react";
 
-import introCoffee from "@assets/introCoffee.png";
 import { IconBackground, IntroWrapper, TitleWrapper, Topics } from "./styles";
 
 interface Topic {

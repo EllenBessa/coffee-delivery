@@ -1,10 +1,9 @@
-import { CoffeeCard } from "./components/CoffeeCard";
-import { IntroAboutCoffee } from "./components/IntroAboutCoffee";
-
-import { CardListsWrapper, CoffeesSection } from "./styles";
+import { useState } from "react";
 
 import coffeesMocks from "../../mocks/coffees.json";
-import { useState } from "react";
+import { CoffeeCard } from "./components/CoffeeCard";
+import { IntroAboutCoffee } from "./components/IntroAboutCoffee";
+import { CardListsWrapper, CoffeesSection } from "./styles";
 
 interface Coffee {
   id: string;

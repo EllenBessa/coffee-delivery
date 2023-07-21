@@ -1,8 +1,6 @@
-import { Trash } from "@phosphor-icons/react";
-
-import { InputNumber } from "@components/InputNumber";
-
 import cafe from "@assets/expresso.png";
+import { InputNumber } from "@components/InputNumber";
+import { Trash } from "@phosphor-icons/react";
 
 import { FinalizationCard, RemoveButton } from "./styles";
 

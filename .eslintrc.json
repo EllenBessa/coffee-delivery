@@ -1,10 +1,19 @@
 {
   "extends": ["@rocketseat/eslint-config/react"],
-  "plugins": ["prettier"],
+  "plugins": ["prettier", "eslint-plugin-import-helpers"],
   "rules": {
     "array-callback-return": "off",
     "no-useless-constructor": "off",
     "no-unused-vars": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "import-helpers/order-imports": [
+      "warn",
+      {
+        "newlinesBetween": "always",
+        "groups": ["module", "/^@/", ["parent", "sibling", "index"]],
+        "alphabetize": { "order": "asc", "ignoreCase": true }
+      }
+    ],
     "prettier/prettier": [
       "error",
       {

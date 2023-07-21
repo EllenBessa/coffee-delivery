@@ -1,10 +1,9 @@
 import { Link } from "react-router-dom";
 
+import logo from "@assets/logo.png";
 import { MapPin } from "@phosphor-icons/react";
 
 import { CartButton } from "../CartButton";
-
-import logo from "@assets/logo.png";
 import { HeaderContainer } from "./styles";
 
 export function Header() {
