@@ -1,7 +1,7 @@
-import { MapPin } from "@phosphor-icons/react";
+import { MapPin, Timer } from "@phosphor-icons/react";
 
 import ilustracao from "../../assets/ilustracao.png";
-import { AddressList, SuccessWrapper } from "./styles";
+import { AddressList, IconBackground, SuccessWrapper } from "./styles";
 
 export function Success() {
   return (
@@ -12,20 +12,32 @@ export function Success() {
 
         <AddressList>
           <li>
-            <MapPin />
-            <p>Entrega em Rua João Daniel Martinelli, 102</p>
-            <span> Farrapos - Porto Alegre, RS</span>
-          </li>
-          <li>
-            <MapPin />
-            <p>Previsão de entrega</p>
+            <IconBackground>
+              <MapPin size={16} weight="fill" />
+            </IconBackground>
+
+            <p>
+              Entrega em <b> Rua João Daniel Martinelli, 102 </b>
+            </p>
             <span> Farrapos - Porto Alegre, RS</span>
           </li>
 
           <li>
-            <MapPin />
-            <p>Pagamento de entrega</p>
-            <span> Farrapos - Porto Alegre, RS</span>
+            <IconBackground>
+              <Timer size={16} weight="fill" />
+            </IconBackground>
+
+            <p>Previsão de entrega</p>
+            <strong> 20min - 30min</strong>
+          </li>
+
+          <li>
+            <IconBackground>
+              <MapPin size={16} weight="fill" />
+            </IconBackground>
+
+            <p>Pagamento na entrega</p>
+            <strong>Cartão de crédito</strong>
           </li>
         </AddressList>
       </div>
