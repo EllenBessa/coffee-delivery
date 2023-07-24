@@ -15,8 +15,8 @@ export const SuccessWrapper = styled.main`
 
     > span {
       color: ${(props) => props.theme["base-subtitle"]};
-      font-family: "Roboto", sans-serif;
       font-size: 1.25rem;
+      font-family: "Roboto", sans-serif;
     }
   }
 
@@ -25,6 +25,10 @@ export const SuccessWrapper = styled.main`
 
     justify-self: center;
     align-self: end;
+  }
+
+  @media (max-width: 450px) {
+    margin-top: 1rem;
   }
 `;
 
@@ -72,6 +76,11 @@ export const AddressList = styled.ul`
     strong {
       grid-column: 2;
     }
+  }
+
+  @media (max-width: 450px) {
+    padding: 1.5rem;
+    width: fit-content;
   }
 `;
 
