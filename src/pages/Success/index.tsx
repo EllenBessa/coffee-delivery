@@ -12,7 +12,7 @@ export function Success() {
 
         <AddressList>
           <li>
-            <IconBackground>
+            <IconBackground background="purple">
               <MapPin size={16} weight="fill" />
             </IconBackground>
 
@@ -23,7 +23,7 @@ export function Success() {
           </li>
 
           <li>
-            <IconBackground>
+            <IconBackground background="yellow">
               <Timer size={16} weight="fill" />
             </IconBackground>
 
@@ -32,7 +32,7 @@ export function Success() {
           </li>
 
           <li>
-            <IconBackground>
+            <IconBackground background="yellow-dark">
               <MapPin size={16} weight="fill" />
             </IconBackground>
 

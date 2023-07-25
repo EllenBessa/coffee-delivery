@@ -49,11 +49,12 @@ export const AddressList = styled.ul`
 
     padding: 1px;
     background: linear-gradient(
-      ${(props) => props.theme["yellow"]},
-      ${(props) => props.theme["purple"]}
+      ${(props) => props.theme.yellow},
+      ${(props) => props.theme.purple}
     );
     border-radius: 0.375rem 2.25rem;
 
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask: linear-gradient(#fff 0 0) content-box,
       linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
@@ -84,7 +85,11 @@ export const AddressList = styled.ul`
   }
 `;
 
-export const IconBackground = styled.div`
+interface IconBackgroundProps {
+  background: "purple" | "yellow" | "yellow-dark";
+}
+
+export const IconBackground = styled.div<IconBackgroundProps>`
   grid-row: 1/4;
   align-self: center;
 
@@ -93,7 +98,7 @@ export const IconBackground = styled.div`
 
   aspect-ratio: 1/1;
   border-radius: 50%;
-  background: ${(props) => props.theme["purple"]};
+  background: ${(props) => props.theme[props.background]};
   color: ${(props) => props.theme.white};
 
   display: flex;
