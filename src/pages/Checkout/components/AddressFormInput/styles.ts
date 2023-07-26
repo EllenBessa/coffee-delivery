@@ -12,7 +12,7 @@ export const AddressFormWrapper = styled.form`
 
     position: relative;
 
-    input {
+    fieldset {
       width: 100%;
     }
 
@@ -30,11 +30,11 @@ export const AddressFormWrapper = styled.form`
     }
   }
 
-  input:nth-child(1) {
+  fieldset:nth-child(1) {
     grid-column: span 1;
   }
 
-  input:nth-child(2) {
+  fieldset:nth-child(2) {
     grid-column: span 3;
   }
 `;

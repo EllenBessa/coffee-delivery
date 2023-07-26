@@ -1,9 +1,17 @@
-import { ComponentProps } from "react";
+import { ComponentProps, forwardRef } from "react";
 
-import { StyledInput } from "./styles";
+import { ErrorMessage, InputWrapper, StyledInput } from "./styles";
 
-type InputProps = ComponentProps<"input">;
-
-export function Input({ ...props }: InputProps) {
-  return <StyledInput {...props} />;
+interface InputProps extends ComponentProps<"input"> {
+  error?: string;
 }
+
+export const Input = forwardRef<HTMLInputElement, Omit<InputProps, "ref">>(
+  ({ error, ...props }, ref) => (
+    <InputWrapper>
+      <StyledInput ref={ref} {...props} />
+
+      {!!error && <ErrorMessage>{error}</ErrorMessage>}
+    </InputWrapper>
+  )
+);

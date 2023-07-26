@@ -5,6 +5,7 @@
     "array-callback-return": "off",
     "no-useless-constructor": "off",
     "no-unused-vars": "off",
+    "react/display-name": "off",
     "@typescript-eslint/no-non-null-assertion": "off",
     "import-helpers/order-imports": [
       "warn",

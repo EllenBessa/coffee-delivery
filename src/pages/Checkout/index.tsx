@@ -10,7 +10,7 @@ import {
   ConfirmOrderButton,
   FinalizationOfPayment,
   FinalizationOfPaymentWrapper,
-  PaymentMethodWrapper,
+  PaymentMethodWrapper
 } from "./styles";
 
 export function Checkout() {
