@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 
-export const AddressFormWrapper = styled.form`
+export const AddressFormWrapper = styled.section`
   width: 100%;
 
   display: grid;
