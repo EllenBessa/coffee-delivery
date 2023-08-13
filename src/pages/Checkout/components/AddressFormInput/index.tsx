@@ -1,21 +1,15 @@
 import { useFormContext } from "react-hook-form";
 
 import { Input } from "@components/Input";
+import { AddressFormFields } from "@pages/Checkout";
 
 import { AddressFormWrapper } from "./styles";
 
-interface ErrorsType {
-  errors: {
-    [key: string]: {
-      message: string;
-    };
-  };
-}
-
 export function AddressFormInput() {
-  const { register, formState } = useFormContext();
-
-  const { errors } = formState as unknown as ErrorsType;
+  const {
+    register,
+    formState: { errors }
+  } = useFormContext<AddressFormFields>();
 
   return (
     <AddressFormWrapper>

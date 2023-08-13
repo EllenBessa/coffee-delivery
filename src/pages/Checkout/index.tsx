@@ -62,10 +62,10 @@ const addressFormValidationSchema = z.object({
   )
 });
 
-type FormProps = z.infer<typeof addressFormValidationSchema>;
+export type AddressFormFields = z.infer<typeof addressFormValidationSchema>;
 
 export function Checkout() {
-  const validationFormProvider = useForm<FormProps>({
+  const validationFormProvider = useForm<AddressFormFields>({
     criteriaMode: "all",
     mode: "onBlur",
     resolver: zodResolver(addressFormValidationSchema),
@@ -81,7 +81,7 @@ export function Checkout() {
 
   const { handleSubmit } = validationFormProvider;
 
-  const handleFormSubmit = (data: FormProps) => {
+  const handleFormSubmit = (data: AddressFormFields) => {
     console.log(data);
   };
 
