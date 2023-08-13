@@ -6,19 +6,11 @@ export const AddressFormWrapper = styled.section`
   display: grid;
   grid-template-columns: 12.5rem 1fr 3.75rem;
   gap: 1rem;
-  /* 
-  @media (max-width: 1200px) {
-    grid-template-columns: 1fr;
-  } */
 
   div {
     grid-column: span 2;
 
     position: relative;
-
-    fieldset {
-      width: 100%;
-    }
 
     span {
       position: absolute;
@@ -32,6 +24,10 @@ export const AddressFormWrapper = styled.section`
       right: 0.75rem;
       pointer-events: none;
     }
+
+    fieldset {
+      width: 100%;
+    }
   }
 
   fieldset:nth-child(1) {
@@ -40,5 +36,21 @@ export const AddressFormWrapper = styled.section`
 
   fieldset:nth-child(2) {
     grid-column: span 3;
+  }
+
+  @media (max-width: 1200px) {
+    grid-template-columns: 1fr;
+
+    div {
+      grid-column: unset;
+    }
+
+    fieldset:nth-child(1) {
+      grid-column: unset;
+    }
+
+    fieldset:nth-child(2) {
+      grid-column: unset;
+    }
   }
 `;

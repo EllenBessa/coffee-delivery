@@ -4,6 +4,16 @@ export const CheckoutWrapper = styled.main`
   display: grid;
   grid-template-columns: 2fr 1.2fr;
   gap: 2rem;
+
+  @media (max-width: 1200px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
 `;
 
 export const CheckoutFormWrapper = styled.section`
@@ -23,6 +33,10 @@ export const AddressFormWrapper = styled.form`
 
   background: ${(props) => props.theme["base-card"]};
   border-radius: 6px;
+
+  @media (max-width: 1200px) {
+    padding: 1.6rem;
+  }
 
   > div {
     display: grid;
@@ -90,6 +104,12 @@ export const PaymentMethodWrapper = styled.div`
     grid-template-columns: repeat(3, 1fr);
     gap: 0.75rem;
   }
+
+  @media (max-width: 1200px) {
+    div:last-child {
+      grid-template-columns: 1fr;
+    }
+  }
 `;
 
 export const FinalizationOfPaymentWrapper = styled.section`
@@ -108,6 +128,10 @@ export const FinalizationOfPayment = styled.div`
 
   background: ${(props) => props.theme["base-card"]};
   border-radius: 6px 44px;
+
+  @media (max-width: 1200px) {
+    padding: 1.5rem;
+  }
 
   ul {
     margin-top: 1.6rem;
