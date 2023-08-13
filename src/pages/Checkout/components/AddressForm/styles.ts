@@ -6,6 +6,10 @@ export const AddressFormWrapper = styled.section`
   display: grid;
   grid-template-columns: 12.5rem 1fr 3.75rem;
   gap: 1rem;
+  /* 
+  @media (max-width: 1200px) {
+    grid-template-columns: 1fr;
+  } */
 
   div {
     grid-column: span 2;

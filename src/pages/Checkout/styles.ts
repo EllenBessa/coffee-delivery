@@ -18,7 +18,7 @@ export const CheckoutFormWrapper = styled.section`
   }
 `;
 
-export const AddressFormWrapper = styled.div`
+export const AddressFormWrapper = styled.form`
   padding: 2.5rem;
 
   background: ${(props) => props.theme["base-card"]};

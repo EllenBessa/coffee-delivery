@@ -1,4 +1,4 @@
-import { useForm } from "react-hook-form";
+import { FormProvider, useForm } from "react-hook-form";
 import * as z from "zod";
 
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -8,7 +8,7 @@ import { AddressForm } from "./components/AddressForm";
 import { CoffeePaymentFinalizationCard } from "./components/CoffeePaymentFinalizationCard";
 import { PaymentMethodButton } from "./components/PaymentMethodButton";
 import {
-  AddressForm,
+  AddressFormWrapper,
   CheckoutFormWrapper,
   CheckoutWrapper,
   ConfirmOrderButton,
@@ -65,7 +65,7 @@ const addressFormValidationSchema = z.object({
 export type AddressFormFields = z.infer<typeof addressFormValidationSchema>;
 
 export function Checkout() {
-  const validationFormProvider = useForm<AddressFormFields>({
+  const addressForm = useForm<AddressFormFields>({
     criteriaMode: "all",
     mode: "onBlur",
     resolver: zodResolver(addressFormValidationSchema),
@@ -79,76 +79,79 @@ export function Checkout() {
     }
   });
 
-  const { handleSubmit } = validationFormProvider;
+  const { handleSubmit } = addressForm;
 
   const handleFormSubmit = (data: AddressFormFields) => {
     console.log(data);
   };
 
   return (
-    <CheckoutWrapper onSubmit={handleSubmit(handleFormSubmit)}>
-      <FormProvider {...validationFormProvider}>
-        <CheckoutFormWrapper>
-          <h1>Complete seu pedido</h1>
+    <CheckoutWrapper>
+      <CheckoutFormWrapper>
+        <h1>Complete seu pedido</h1>
 
-        <AddressFormWrapper>
+        <AddressFormWrapper
+          onSubmit={handleSubmit(handleFormSubmit)}
+          id="addressForm"
+        >
           <div>
             <MapPinLine size={22} />
 
-              <div>
-                <span>Endereço de Entrega</span>
-                <p>Informe o endereço onde deseja receber seu pedido</p>
-              </div>
+            <div>
+              <span>Endereço de Entrega</span>
+              <p>Informe o endereço onde deseja receber seu pedido</p>
             </div>
+          </div>
 
-          <AddressForm />
+          <FormProvider {...addressForm}>
+            <AddressForm />
+          </FormProvider>
         </AddressFormWrapper>
 
-          <PaymentMethodWrapper>
-            <div>
-              <CurrencyDollar size={22} />
+        <PaymentMethodWrapper>
+          <div>
+            <CurrencyDollar size={22} />
 
-              <span>Pagamento</span>
-              <p>
-                O pagamento é feito na entrega. Escolha a forma que deseja pagar
-              </p>
-            </div>
+            <span>Pagamento</span>
+            <p>
+              O pagamento é feito na entrega. Escolha a forma que deseja pagar
+            </p>
+          </div>
 
-            <div>
-              <PaymentMethodButton paymentMethod="credit" />
-              <PaymentMethodButton paymentMethod="debit" />
-              <PaymentMethodButton paymentMethod="money" />
-            </div>
-          </PaymentMethodWrapper>
-        </CheckoutFormWrapper>
+          <div>
+            <PaymentMethodButton paymentMethod="credit" />
+            <PaymentMethodButton paymentMethod="debit" />
+            <PaymentMethodButton paymentMethod="money" />
+          </div>
+        </PaymentMethodWrapper>
+      </CheckoutFormWrapper>
 
-        <FinalizationOfPaymentWrapper>
-          <h2>Cafés selecionados</h2>
-          <FinalizationOfPayment>
-            <CoffeePaymentFinalizationCard />
-            <CoffeePaymentFinalizationCard />
+      <FinalizationOfPaymentWrapper>
+        <h2>Cafés selecionados</h2>
+        <FinalizationOfPayment>
+          <CoffeePaymentFinalizationCard />
+          <CoffeePaymentFinalizationCard />
 
-            <ul>
-              <li>
-                Total de itens
-                <span>R$ 29,70</span>
-              </li>
-              <li>
-                Entrega
-                <span>R$ 3,50</span>
-              </li>
-              <li>
-                <strong>Total</strong>
-                <strong>R$ 33,20</strong>
-              </li>
-            </ul>
+          <ul>
+            <li>
+              Total de itens
+              <span>R$ 29,70</span>
+            </li>
+            <li>
+              Entrega
+              <span>R$ 3,50</span>
+            </li>
+            <li>
+              <strong>Total</strong>
+              <strong>R$ 33,20</strong>
+            </li>
+          </ul>
 
-            <ConfirmOrderButton type="button">
-              confirmar pedido
-            </ConfirmOrderButton>
-          </FinalizationOfPayment>
-        </FinalizationOfPaymentWrapper>
-      </FormProvider>
+          <ConfirmOrderButton type="submit" form="addressForm">
+            confirmar pedido
+          </ConfirmOrderButton>
+        </FinalizationOfPayment>
+      </FinalizationOfPaymentWrapper>
     </CheckoutWrapper>
   );
 }
