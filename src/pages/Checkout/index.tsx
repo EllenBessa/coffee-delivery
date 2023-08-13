@@ -1,10 +1,10 @@
-import { FormProvider, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import * as z from "zod";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { CurrencyDollar, MapPinLine } from "@phosphor-icons/react";
 
-import { AddressFormInput } from "./components/AddressFormInput";
+import { AddressForm } from "./components/AddressForm";
 import { CoffeePaymentFinalizationCard } from "./components/CoffeePaymentFinalizationCard";
 import { PaymentMethodButton } from "./components/PaymentMethodButton";
 import {
@@ -91,9 +91,9 @@ export function Checkout() {
         <CheckoutFormWrapper>
           <h1>Complete seu pedido</h1>
 
-          <AddressForm>
-            <div>
-              <MapPinLine size={22} />
+        <AddressFormWrapper>
+          <div>
+            <MapPinLine size={22} />
 
               <div>
                 <span>Endereço de Entrega</span>
@@ -101,8 +101,8 @@ export function Checkout() {
               </div>
             </div>
 
-            <AddressFormInput />
-          </AddressForm>
+          <AddressForm />
+        </AddressFormWrapper>
 
           <PaymentMethodWrapper>
             <div>

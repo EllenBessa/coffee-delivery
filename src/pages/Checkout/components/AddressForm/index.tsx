@@ -5,7 +5,7 @@ import { AddressFormFields } from "@pages/Checkout";
 
 import { AddressFormWrapper } from "./styles";
 
-export function AddressFormInput() {
+export function AddressForm() {
   const {
     register,
     formState: { errors }
