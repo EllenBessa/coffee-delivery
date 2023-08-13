@@ -69,7 +69,9 @@ export const FooterCoffeeCard = styled.footer`
     font-size: 0.875rem;
 
     strong {
-      font-size: 1.4rem;
+      margin-left: 0.375rem;
+
+      font-size: 1.5rem;
       font-family: "Baloo 2", cursive;
     }
   }
