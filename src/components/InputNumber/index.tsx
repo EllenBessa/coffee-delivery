@@ -35,8 +35,8 @@ export function InputNumber() {
         <Minus size={BUTTON_ICON_SIZE} weight="bold" />
       </button>
 
-      <label htmlFor="">{quantity}</label>
-      <input type="hidden" />
+      <label htmlFor="quantity">{quantity}</label>
+      <input type="hidden" id="quantity" />
 
       <button
         type="button"
