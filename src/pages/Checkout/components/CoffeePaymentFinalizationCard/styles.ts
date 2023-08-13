@@ -20,7 +20,8 @@ export const FinalizationCard = styled.div`
 
   > div {
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
 
     span {
       margin-bottom: 0.5rem;
@@ -30,10 +31,15 @@ export const FinalizationCard = styled.div`
       color: ${(props) => props.theme["base-subtitle"]};
     }
 
-    div {
+    > div {
       display: flex;
-      align-items: center;
-      gap: 0.3rem;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+
+      div {
+        display: flex;
+      }
     }
   }
 `;
