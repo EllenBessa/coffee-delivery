@@ -24,10 +24,6 @@ export const AddressFormWrapper = styled.form`
   background: ${(props) => props.theme["base-card"]};
   border-radius: 6px;
 
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-
   > div {
     display: grid;
     grid-template-columns: 2rem auto;
