@@ -31,6 +31,7 @@ export const AddressFormWrapper = styled.form`
   > div {
     display: grid;
     grid-template-columns: 2rem auto;
+    margin-bottom: 2rem;
 
     svg {
       color: ${(props) => props.theme["yellow-dark"]};
