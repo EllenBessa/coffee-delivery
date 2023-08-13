@@ -22,6 +22,10 @@ export const FormCoffeeCard = styled.form`
   button {
     all: unset;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     padding: 0.5rem 0.5rem;
 
     color: ${(props) => props.theme.purple};
