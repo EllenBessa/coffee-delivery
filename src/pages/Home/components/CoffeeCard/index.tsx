@@ -1,5 +1,5 @@
 import { CartButton } from "@components/CartButton";
-import { InputNumber } from "@components/InputNumber";
+import { ProductQuantityInput } from "@components/ProductQuantityInput";
 
 import {
   CoffeeCardWrapper,
@@ -45,7 +45,7 @@ export function CoffeeCard({ coffee }: CoffeesCardsProps) {
           <strong>{formatCoffeeValue(price)}</strong>
         </span>
 
-        <InputNumber />
+        <ProductQuantityInput />
 
         <CartButton variant="card" aria-label="Adicionar ao carrinho" />
       </FooterCoffeeCard>

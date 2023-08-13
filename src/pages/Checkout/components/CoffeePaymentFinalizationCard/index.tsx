@@ -1,5 +1,5 @@
 import cafe from "@assets/expresso.png";
-import { InputNumber } from "@components/InputNumber";
+import { ProductQuantityInput } from "@components/ProductQuantityInput";
 import { Trash } from "@phosphor-icons/react";
 
 import { FinalizationCard, RemoveButton } from "./styles";
@@ -12,7 +12,7 @@ export function CoffeePaymentFinalizationCard() {
         <span>Expresso Tradicional</span>
 
         <div>
-          <InputNumber />
+          <ProductQuantityInput />
 
           <RemoveButton>
             <Trash size={16} />
