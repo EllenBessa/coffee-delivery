@@ -4,6 +4,8 @@ import { Minus, Plus } from "@phosphor-icons/react";
 
 import { FormCoffeeCard } from "../../components/InputNumber/styles";
 
+const BUTTON_ICON_SIZE = 14;
+
 export function InputNumber() {
   const [quantity, setQuantity] = useState(1);
 
@@ -30,7 +32,7 @@ export function InputNumber() {
         onClick={handleDecreaseQuantity}
         aria-label="Diminuir quantidade"
       >
-        <Minus size={14} weight="bold" />
+        <Minus size={BUTTON_ICON_SIZE} weight="bold" />
       </button>
 
       <label htmlFor="">{quantity}</label>
@@ -41,7 +43,7 @@ export function InputNumber() {
         onClick={handleIncreaseQuantity}
         aria-label="Aumentar quantidade"
       >
-        <Plus size={14} weight="bold" />
+        <Plus size={BUTTON_ICON_SIZE} weight="bold" />
       </button>
     </FormCoffeeCard>
   );
