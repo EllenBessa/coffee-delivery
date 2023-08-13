@@ -1,6 +1,6 @@
 import { MapPin, Timer } from "@phosphor-icons/react";
 
-import ilustracao from "../../assets/ilustracao.png";
+import illustration from "../../assets/illustration.png";
 import { AddressList, IconBackground, SuccessWrapper } from "./styles";
 
 export function Success() {
@@ -42,7 +42,7 @@ export function Success() {
         </AddressList>
       </div>
 
-      <img src={ilustracao} alt="" />
+      <img src={illustration} alt="" />
     </SuccessWrapper>
   );
 }
