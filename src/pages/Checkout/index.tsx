@@ -2,19 +2,18 @@ import { FormProvider, useForm } from "react-hook-form";
 import * as z from "zod";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { CurrencyDollar, MapPinLine } from "@phosphor-icons/react";
+import { MapPinLine } from "@phosphor-icons/react";
 
 import { AddressForm } from "./components/AddressForm";
 import { CoffeePaymentFinalizationCard } from "./components/CoffeePaymentFinalizationCard";
-import { PaymentMethodButton } from "./components/PaymentMethodButton";
+import { PaymentMethod } from "./components/PaymentMethod";
 import {
   AddressFormWrapper,
   CheckoutFormWrapper,
   CheckoutWrapper,
   ConfirmOrderButton,
   FinalizationOfPayment,
-  FinalizationOfPaymentWrapper,
-  PaymentMethodWrapper
+  FinalizationOfPaymentWrapper
 } from "./styles";
 
 const addressFormValidationSchema = z.object({
@@ -108,22 +107,7 @@ export function Checkout() {
           </FormProvider>
         </AddressFormWrapper>
 
-        <PaymentMethodWrapper>
-          <div>
-            <CurrencyDollar size={22} />
-
-            <span>Pagamento</span>
-            <p>
-              O pagamento é feito na entrega. Escolha a forma que deseja pagar
-            </p>
-          </div>
-
-          <div>
-            <PaymentMethodButton paymentMethod="credit" />
-            <PaymentMethodButton paymentMethod="debit" />
-            <PaymentMethodButton paymentMethod="money" />
-          </div>
-        </PaymentMethodWrapper>
+        <PaymentMethod />
       </CheckoutFormWrapper>
 
       <FinalizationOfPaymentWrapper>
