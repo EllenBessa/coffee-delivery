@@ -3,6 +3,7 @@ import { useState } from "react";
 import { ProductQuantityInput } from "@components/ProductQuantityInput";
 import { Trash } from "@phosphor-icons/react";
 
+import { formatPrice } from "../../../../helpers/formatPrice";
 import { FinalizationCard, RemoveButton } from "./styles";
 
 interface CoffeePaymentFinalizationCardProps {
@@ -40,7 +41,7 @@ export function CoffeePaymentFinalizationCard({
           </div>
         </div>
       </div>
-      <strong>R$ {price}</strong>
+      <strong>R$ {formatPrice(price)}</strong>
     </FinalizationCard>
   );
 }

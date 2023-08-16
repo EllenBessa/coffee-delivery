@@ -3,6 +3,7 @@ import { useState } from "react";
 import { CartButton } from "@components/CartButton";
 import { ProductQuantityInput } from "@components/ProductQuantityInput";
 
+import { formatPrice } from "../../../../helpers/formatPrice";
 import { useCartContext } from "../../../../hooks/useCartContext";
 import {
   CoffeeCardWrapper,
@@ -12,6 +13,7 @@ import {
 
 export interface CoffeesCardsProps {
   coffee: {
+    id: string;
     name: string;
     categories: string[];
     description: string;
@@ -26,12 +28,6 @@ export function CoffeeCard({ coffee }: CoffeesCardsProps) {
   const { addCoffeeToCart } = useCartContext();
 
   const { name, categories, description, price, imageUrl } = coffee;
-
-  const formatCoffeeValue = (price: number) => {
-    return new Intl.NumberFormat("pt-BR", {
-      currency: "BRL"
-    }).format(price);
-  };
 
   function handleAddToCart() {
     const coffeeToCart = {
@@ -60,7 +56,7 @@ export function CoffeeCard({ coffee }: CoffeesCardsProps) {
       <FooterCoffeeCard>
         <span>
           R$
-          <strong>{formatCoffeeValue(price)}</strong>
+          <strong>{formatPrice(price)}</strong>
         </span>
 
         <ProductQuantityInput quantity={quantity} setQuantity={setQuantity} />
