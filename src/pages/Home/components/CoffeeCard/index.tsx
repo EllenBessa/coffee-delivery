@@ -2,9 +2,9 @@ import { useState } from "react";
 
 import { CartButton } from "@components/CartButton";
 import { ProductQuantityInput } from "@components/ProductQuantityInput";
+import { formatPrice } from "@helpers/formatPrice";
+import { useCartContext } from "@hooks/useCartContext";
 
-import { formatPrice } from "../../../../helpers/formatPrice";
-import { useCartContext } from "../../../../hooks/useCartContext";
 import {
   CoffeeCardWrapper,
   FooterCoffeeCard,

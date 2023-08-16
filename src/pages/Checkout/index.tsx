@@ -2,9 +2,9 @@ import { FormProvider, useForm } from "react-hook-form";
 import * as z from "zod";
 
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useCartContext } from "@hooks/useCartContext";
 import { MapPinLine } from "@phosphor-icons/react";
 
-import { useCartContext } from "../../hooks/useCartContext";
 import { AddressForm } from "./components/AddressForm";
 import { CoffeePaymentFinalizationCard } from "./components/CoffeePaymentFinalizationCard";
 import { PaymentMethod } from "./components/PaymentMethod";

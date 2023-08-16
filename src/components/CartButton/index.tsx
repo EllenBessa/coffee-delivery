@@ -1,8 +1,8 @@
 import { ComponentPropsWithRef } from "react";
 
+import { useCartContext } from "@hooks/useCartContext";
 import { ShoppingCart, ShoppingCartSimple } from "@phosphor-icons/react";
 
-import { useCartContext } from "../../hooks/useCartContext";
 import { CartButtonWrapper } from "./styles";
 
 interface CartButtonProps extends ComponentPropsWithRef<"button"> {
