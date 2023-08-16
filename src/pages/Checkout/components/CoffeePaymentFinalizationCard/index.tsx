@@ -1,19 +1,37 @@
-import cafe from "@assets/expresso.png";
+import { useState } from "react";
+
 import { ProductQuantityInput } from "@components/ProductQuantityInput";
 import { Trash } from "@phosphor-icons/react";
 
 import { FinalizationCard, RemoveButton } from "./styles";
 
-export function CoffeePaymentFinalizationCard() {
+interface CoffeePaymentFinalizationCardProps {
+  imageUrl: string;
+  name: string;
+  quantity: number;
+  price: number;
+}
+
+export function CoffeePaymentFinalizationCard({
+  imageUrl,
+  name,
+  price,
+  ...props
+}: CoffeePaymentFinalizationCardProps) {
+  const [quantity, setQuantity] = useState(props.quantity);
+
   return (
     <FinalizationCard>
       <div>
-        <img src={cafe} alt="" />
+        <img src={imageUrl} alt="" />
 
         <div>
-          <span>Expresso Tradicional</span>
+          <span>{name}</span>
           <div>
-            <ProductQuantityInput />
+            <ProductQuantityInput
+              quantity={quantity}
+              setQuantity={setQuantity}
+            />
 
             <RemoveButton>
               <Trash size={16} />
@@ -22,7 +40,7 @@ export function CoffeePaymentFinalizationCard() {
           </div>
         </div>
       </div>
-      <strong>R$ 9,90</strong>
+      <strong>R$ {price}</strong>
     </FinalizationCard>
   );
 }

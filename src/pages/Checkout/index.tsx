@@ -4,6 +4,7 @@ import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { MapPinLine } from "@phosphor-icons/react";
 
+import { useCartContext } from "../../hooks/useCartContext";
 import { AddressForm } from "./components/AddressForm";
 import { CoffeePaymentFinalizationCard } from "./components/CoffeePaymentFinalizationCard";
 import { PaymentMethod } from "./components/PaymentMethod";
@@ -64,6 +65,8 @@ const addressFormValidationSchema = z.object({
 export type AddressFormFields = z.infer<typeof addressFormValidationSchema>;
 
 export function Checkout() {
+  const { cartItems } = useCartContext();
+
   const addressForm = useForm<AddressFormFields>({
     criteriaMode: "all",
     mode: "onBlur",
@@ -113,8 +116,15 @@ export function Checkout() {
       <FinalizationOfPaymentWrapper>
         <h2>Cafés selecionados</h2>
         <FinalizationOfPayment>
-          <CoffeePaymentFinalizationCard />
-          <CoffeePaymentFinalizationCard />
+          {cartItems.map((item) => (
+            <CoffeePaymentFinalizationCard
+              key={item.id}
+              imageUrl={item.imageUrl}
+              name={item.name}
+              price={item.price}
+              quantity={item.quantity}
+            />
+          ))}
 
           <ul>
             <li>

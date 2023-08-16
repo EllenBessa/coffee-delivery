@@ -2,6 +2,7 @@ import { produce } from "immer";
 import { ReactNode, useState, createContext } from "react";
 
 export interface CartItem {
+  id: string;
   name: string;
   categories: string[];
   description: string;
