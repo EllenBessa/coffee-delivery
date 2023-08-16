@@ -3,6 +3,7 @@ import { useState } from "react";
 import { CartButton } from "@components/CartButton";
 import { ProductQuantityInput } from "@components/ProductQuantityInput";
 
+import { useCartContext } from "../../../../hooks/useCartContext";
 import {
   CoffeeCardWrapper,
   FooterCoffeeCard,
@@ -22,6 +23,8 @@ export interface CoffeesCardsProps {
 export function CoffeeCard({ coffee }: CoffeesCardsProps) {
   const [quantity, setQuantity] = useState(1);
 
+  const { addCoffeeToCart } = useCartContext();
+
   const { name, categories, description, price, imageUrl } = coffee;
 
   const formatCoffeeValue = (price: number) => {
@@ -29,6 +32,14 @@ export function CoffeeCard({ coffee }: CoffeesCardsProps) {
       currency: "BRL"
     }).format(price);
   };
+
+  function handleAddToCart() {
+    const coffeeToCart = {
+      ...coffee,
+      quantity
+    };
+    addCoffeeToCart(coffeeToCart);
+  }
 
   return (
     <CoffeeCardWrapper>
@@ -51,7 +62,11 @@ export function CoffeeCard({ coffee }: CoffeesCardsProps) {
 
         <ProductQuantityInput quantity={quantity} setQuantity={setQuantity} />
 
-        <CartButton variant="card" aria-label="Adicionar ao carrinho" />
+        <CartButton
+          onClick={handleAddToCart}
+          variant="card"
+          aria-label="Adicionar ao carrinho"
+        />
       </FooterCoffeeCard>
     </CoffeeCardWrapper>
   );
