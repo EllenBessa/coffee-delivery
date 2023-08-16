@@ -2,6 +2,7 @@ import { ComponentPropsWithRef } from "react";
 
 import { ShoppingCart, ShoppingCartSimple } from "@phosphor-icons/react";
 
+import { useCartContext } from "../../hooks/useCartContext";
 import { CartButtonWrapper } from "./styles";
 
 interface CartButtonProps extends ComponentPropsWithRef<"button"> {
@@ -9,6 +10,8 @@ interface CartButtonProps extends ComponentPropsWithRef<"button"> {
 }
 
 export function CartButton({ variant, ...props }: CartButtonProps) {
+  const { itemsCount } = useCartContext();
+
   return (
     <CartButtonWrapper variant={variant} {...props}>
       {variant === "header" ? (
@@ -17,7 +20,7 @@ export function CartButton({ variant, ...props }: CartButtonProps) {
         <ShoppingCartSimple size={18} weight="fill" />
       )}
 
-      {variant === "header" && <span>1</span>}
+      {variant === "header" && <span>{itemsCount}</span>}
     </CartButtonWrapper>
   );
 }
