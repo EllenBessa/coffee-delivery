@@ -38,7 +38,10 @@ export function CoffeeCard({ coffee }: CoffeesCardsProps) {
       ...coffee,
       quantity
     };
+
     addCoffeeToCart(coffeeToCart);
+
+    setQuantity(1);
   }
 
   return (
