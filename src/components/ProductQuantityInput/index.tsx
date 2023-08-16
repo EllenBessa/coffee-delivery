@@ -1,14 +1,18 @@
-import { useState } from "react";
-
 import { Minus, Plus } from "@phosphor-icons/react";
 
 import { FormCoffeeCard } from "./styles";
 
+interface ProductQuantityInputProps {
+  quantity: number;
+  setQuantity: (cb: (quantity: number) => number) => void;
+}
+
 const BUTTON_ICON_SIZE = 14;
 
-export function ProductQuantityInput() {
-  const [quantity, setQuantity] = useState(1);
-
+export function ProductQuantityInput({
+  quantity,
+  setQuantity
+}: ProductQuantityInputProps) {
   function handleDecreaseQuantity() {
     if (quantity <= 1) {
       return;

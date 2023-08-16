@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import { CartButton } from "@components/CartButton";
 import { ProductQuantityInput } from "@components/ProductQuantityInput";
 
@@ -7,7 +9,7 @@ import {
   CoffeeCardTagWrapper
 } from "./styles";
 
-interface CoffeesCardsProps {
+export interface CoffeesCardsProps {
   coffee: {
     name: string;
     categories: string[];
@@ -18,6 +20,8 @@ interface CoffeesCardsProps {
 }
 
 export function CoffeeCard({ coffee }: CoffeesCardsProps) {
+  const [quantity, setQuantity] = useState(1);
+
   const { name, categories, description, price, imageUrl } = coffee;
 
   const formatCoffeeValue = (price: number) => {
@@ -45,7 +49,7 @@ export function CoffeeCard({ coffee }: CoffeesCardsProps) {
           <strong>{formatCoffeeValue(price)}</strong>
         </span>
 
-        <ProductQuantityInput />
+        <ProductQuantityInput quantity={quantity} setQuantity={setQuantity} />
 
         <CartButton variant="card" aria-label="Adicionar ao carrinho" />
       </FooterCoffeeCard>
