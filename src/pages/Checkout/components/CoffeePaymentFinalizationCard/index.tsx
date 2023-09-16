@@ -7,6 +7,7 @@ import { Trash } from "@phosphor-icons/react";
 import { FinalizationCard, RemoveButton } from "./styles";
 
 interface CoffeePaymentFinalizationCardProps {
+  coffeeId: string;
   imageUrl: string;
   name: string;
   quantity: number;
@@ -14,12 +15,13 @@ interface CoffeePaymentFinalizationCardProps {
 }
 
 export function CoffeePaymentFinalizationCard({
+  coffeeId,
   imageUrl,
   name,
   price,
-  ...props
+  quantity: defaultQuantity
 }: CoffeePaymentFinalizationCardProps) {
-  const [quantity, setQuantity] = useState(props.quantity);
+  const [quantity, setQuantity] = useState(defaultQuantity);
 
   return (
     <FinalizationCard>
@@ -30,6 +32,7 @@ export function CoffeePaymentFinalizationCard({
           <span>{name}</span>
           <div>
             <ProductQuantityInput
+              coffeeId={coffeeId}
               quantity={quantity}
               setQuantity={setQuantity}
             />

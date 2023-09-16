@@ -119,6 +119,7 @@ export function Checkout() {
           {cartItems.map((item) => (
             <CoffeePaymentFinalizationCard
               key={item.id}
+              coffeeId={item.id}
               imageUrl={item.imageUrl}
               name={item.name}
               price={item.price}

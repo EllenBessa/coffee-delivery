@@ -1,8 +1,10 @@
+import { useCartContext } from "@hooks/useCartContext";
 import { Minus, Plus } from "@phosphor-icons/react";
 
 import { FormCoffeeCard } from "./styles";
 
 interface ProductQuantityInputProps {
+  coffeeId: string;
   quantity: number;
   setQuantity: (cb: (quantity: number) => number) => void;
 }
@@ -10,15 +12,20 @@ interface ProductQuantityInputProps {
 const BUTTON_ICON_SIZE = 14;
 
 export function ProductQuantityInput({
+  coffeeId,
   quantity,
   setQuantity
 }: ProductQuantityInputProps) {
+  const { changeCartItemQuantity } = useCartContext();
+
   function handleDecreaseQuantity() {
     if (quantity <= 1) {
       return;
     }
 
     setQuantity((state) => state - 1);
+
+    changeCartItemQuantity(coffeeId, "decrease");
   }
 
   function handleIncreaseQuantity() {
@@ -27,10 +34,12 @@ export function ProductQuantityInput({
     }
 
     setQuantity((state) => state + 1);
+
+    changeCartItemQuantity(coffeeId, "increase");
   }
 
   return (
-    <FormCoffeeCard action="">
+    <FormCoffeeCard>
       <button
         type="button"
         onClick={handleDecreaseQuantity}
