@@ -20,6 +20,7 @@ interface CartContextType {
     cartItemId: string,
     type: "increase" | "decrease"
   ) => void;
+  handleDeleteCoffee: (id: string) => void;
 }
 
 interface CartContextProviderProps {
@@ -69,6 +70,14 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
     setCartItems(newCart);
   }
 
+  function handleDeleteCoffee(id: string) {
+    const deleteCoffeePaymentFinalizationCard = cartItems.filter((coffee) => {
+      return coffee.id !== id;
+    });
+
+    setCartItems(deleteCoffeePaymentFinalizationCard);
+  }
+
   const itemsCount = cartItems.reduce((acc, item) => {
     return acc + item.quantity;
   }, 0);
@@ -84,7 +93,8 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
         totalPrice,
         itemsCount,
         addCoffeeToCart,
-        changeCartItemQuantity
+        changeCartItemQuantity,
+        handleDeleteCoffee,
       }}
     >
       {children}

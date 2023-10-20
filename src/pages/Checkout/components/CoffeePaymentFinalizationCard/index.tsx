@@ -12,6 +12,7 @@ interface CoffeePaymentFinalizationCardProps {
   name: string;
   quantity: number;
   price: number;
+  onDeleteCoffee: (id: string) => void;
 }
 
 export function CoffeePaymentFinalizationCard({
@@ -19,7 +20,8 @@ export function CoffeePaymentFinalizationCard({
   imageUrl,
   name,
   price,
-  quantity: defaultQuantity
+  quantity: defaultQuantity,
+  onDeleteCoffee,
 }: CoffeePaymentFinalizationCardProps) {
   const [quantity, setQuantity] = useState(defaultQuantity);
 
@@ -39,7 +41,7 @@ export function CoffeePaymentFinalizationCard({
               setQuantity={setQuantity}
             />
 
-            <RemoveButton>
+            <RemoveButton onClick={() => onDeleteCoffee(coffeeId)}>
               <Trash size={16} />
               Remover
             </RemoveButton>

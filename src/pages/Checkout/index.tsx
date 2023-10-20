@@ -11,13 +11,18 @@ import {
   CheckoutWrapper,
   ConfirmOrderButton,
   FinalizationOfPayment,
-  FinalizationOfPaymentWrapper
+  FinalizationOfPaymentWrapper,
 } from "./styles";
 import { useCheckoutController } from "./useCheckoutController";
 
 export function Checkout() {
-  const { cartItems, totalPrice, handleSubmit, addressForm } =
-    useCheckoutController();
+  const {
+    cartItems,
+    totalPrice,
+    handleSubmit,
+    addressForm,
+    handleDeleteCoffee,
+  } = useCheckoutController();
 
   return (
     <CheckoutWrapper>
@@ -46,7 +51,7 @@ export function Checkout() {
         <h2>Cafés selecionados</h2>
         <FinalizationOfPayment>
           {cartItems.length === 0
-            ? "empty view"
+            ? "Você não adicionou nenhum item ao carrinho"
             : cartItems.map((item) => (
                 <CoffeePaymentFinalizationCard
                   key={item.id}
@@ -55,6 +60,7 @@ export function Checkout() {
                   name={item.name}
                   price={item.price}
                   quantity={item.quantity}
+                  onDeleteCoffee={handleDeleteCoffee}
                 />
               ))}
 

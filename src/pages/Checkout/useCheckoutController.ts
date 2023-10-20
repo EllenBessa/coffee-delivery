@@ -39,20 +39,20 @@ const addressFormValidationSchema = z.object({
       "SC",
       "SP",
       "SE",
-      "TO"
+      "TO",
     ],
     {
       errorMap: () => {
         return { message: "Inválido" };
-      }
+      },
     }
-  )
+  ),
 });
 
 export type AddressFormFields = z.infer<typeof addressFormValidationSchema>;
 
 export function useCheckoutController() {
-  const { cartItems, totalPrice } = useCartContext();
+  const { cartItems, totalPrice, handleDeleteCoffee } = useCartContext();
 
   const addressForm = useForm<AddressFormFields>({
     criteriaMode: "all",
@@ -64,8 +64,8 @@ export function useCheckoutController() {
       number: "",
       complement: "",
       district: "",
-      city: ""
-    }
+      city: "",
+    },
   });
 
   const handleSubmit = addressForm.handleSubmit((data) => {
@@ -76,6 +76,7 @@ export function useCheckoutController() {
     cartItems,
     totalPrice,
     handleSubmit,
-    addressForm
+    addressForm,
+    handleDeleteCoffee,
   };
 }
