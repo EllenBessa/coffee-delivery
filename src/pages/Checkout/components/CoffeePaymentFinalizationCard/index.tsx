@@ -23,6 +23,8 @@ export function CoffeePaymentFinalizationCard({
 }: CoffeePaymentFinalizationCardProps) {
   const [quantity, setQuantity] = useState(defaultQuantity);
 
+  const totalPrice = formatPrice(quantity * price);
+
   return (
     <FinalizationCard>
       <div>
@@ -44,7 +46,7 @@ export function CoffeePaymentFinalizationCard({
           </div>
         </div>
       </div>
-      <strong>R$ {formatPrice(price)}</strong>
+      <strong>R$ {totalPrice}</strong>
     </FinalizationCard>
   );
 }

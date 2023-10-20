@@ -52,7 +52,7 @@ const addressFormValidationSchema = z.object({
 export type AddressFormFields = z.infer<typeof addressFormValidationSchema>;
 
 export function useCheckoutController() {
-  const { cartItems } = useCartContext();
+  const { cartItems, totalPrice } = useCartContext();
 
   const addressForm = useForm<AddressFormFields>({
     criteriaMode: "all",
@@ -74,6 +74,7 @@ export function useCheckoutController() {
 
   return {
     cartItems,
+    totalPrice,
     handleSubmit,
     addressForm
   };

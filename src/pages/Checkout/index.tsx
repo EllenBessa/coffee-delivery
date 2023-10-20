@@ -16,7 +16,8 @@ import {
 import { useCheckoutController } from "./useCheckoutController";
 
 export function Checkout() {
-  const { cartItems, handleSubmit, addressForm } = useCheckoutController();
+  const { cartItems, totalPrice, handleSubmit, addressForm } =
+    useCheckoutController();
 
   return (
     <CheckoutWrapper>
@@ -44,21 +45,23 @@ export function Checkout() {
       <FinalizationOfPaymentWrapper>
         <h2>Cafés selecionados</h2>
         <FinalizationOfPayment>
-          {cartItems.map((item) => (
-            <CoffeePaymentFinalizationCard
-              key={item.id}
-              coffeeId={item.id}
-              imageUrl={item.imageUrl}
-              name={item.name}
-              price={item.price}
-              quantity={item.quantity}
-            />
-          ))}
+          {cartItems.length === 0
+            ? "empty view"
+            : cartItems.map((item) => (
+                <CoffeePaymentFinalizationCard
+                  key={item.id}
+                  coffeeId={item.id}
+                  imageUrl={item.imageUrl}
+                  name={item.name}
+                  price={item.price}
+                  quantity={item.quantity}
+                />
+              ))}
 
           <ul>
             <li>
               Total de itens
-              <span>R$ 29,70</span>
+              <span>R$ {totalPrice}</span>
             </li>
             <li>
               Entrega
@@ -66,7 +69,7 @@ export function Checkout() {
             </li>
             <li>
               <strong>Total</strong>
-              <strong>R$ 33,20</strong>
+              <strong>R$ {totalPrice + 3.5}</strong>
             </li>
           </ul>
 
